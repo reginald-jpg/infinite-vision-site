@@ -1,0 +1,37 @@
+---
+description: Infinite Vision content, branding, program model, and partner ecosystem rules
+alwaysApply: true
+---
+
+# Infinite Vision — Content & Program Model
+
+## Tone & framing
+- Veteran-centered, trauma-informed, dignified, mission-driven
+- Memphis-specific; no hype, slang, or emojis
+- No photos unless explicitly requested
+
+## Service pillars (always align content)
+1. **Housing Pathways** — Intake → Assessment → Placement → Stabilization → Case Management
+2. **Transportation Hybrid Model** — priorities, Tier 1/2/3, routing, cost management, tech/coordination
+3. **Financial Empowerment** — budgeting, credit, savings milestones, coaching, platform elements
+4. **Community Integration** — workforce, nonprofits, faith-based (preference-based), veteran-serving orgs
+
+## Care-model inspiration (principles only, no branding copy)
+- **Foxbridge**: warm, belonging, dignity, home-like clarity
+- **American House**: clean structure, professional, funder-ready modularity
+
+## Partner ecosystem
+- Include Memphis-aligned partners per Super Master Prompt; **never** include Alpha Omega Veterans Services
+- Full lists: `/partners`; program pages use **collapsed** partner sections at bottom only
+- No logos unless requested; text-only lists with short role descriptions
+- Do not place partner sections on homepage hero, donate page, or crisis content
+
+## De-duplication
+- **Homepage**: high-level pathways and CTAs
+- **Programs** (`/programs/*`): program-specific detail
+- **Operations** (`/operations`): staffing, outcomes, compliance (single source of truth)
+- **Partners** (`/partners`): full ecosystem
+
+## Donations
+- Replace **"Donate Online"** with official Infinite Vision PayPal embed only (never invent embed code)
+- **Never** route donations through Reset Supply Co.; all donations go to Infinite Vision

@@ -1,0 +1,27 @@
+---
+description: Infinite Vision deployment workflow, Vercel compatibility, and change process
+alwaysApply: true
+---
+
+# Infinite Vision — Deployment & Changes
+
+## When user requests updates
+1. Apply Super Master Prompt (content + program model + partners)
+2. Modify codebase cleanly with minimal scope
+3. Explain what changed
+4. Verify `npm run build` still succeeds when changes are substantial
+5. Suggest commit message only if user asks to commit
+
+## Deployment workflow
+- **Local**: `npm run dev` (default port 3000; use `-p` if occupied)
+- **GitHub**: clean history, deploy-ready main branch
+- **Vercel**: maintain compatibility; document env vars if added; do not log into Vercel or modify DNS
+
+## Key routes (maintain)
+- `/` — homepage
+- `/programs`, `/programs/housing-pathways`, `/programs/transportation-access`, `/programs/financial-empowerment`, `/programs/community-integration`
+- `/partners`, `/operations`
+
+## Auto-fix when possible
+- Imports, routing, component mismatches, accessibility basics (labels, headings, focus, skip link)
+- Keep header logo at `public/infinite-vision-logo.png` with accessible home link

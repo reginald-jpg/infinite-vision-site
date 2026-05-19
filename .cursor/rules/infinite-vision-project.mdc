@@ -1,0 +1,30 @@
+---
+description: Infinite Vision project purpose, codebase standards, file structure, and stability rules
+alwaysApply: true
+---
+
+# Infinite Vision — Project & Codebase
+
+## Purpose
+Official website for **Infinite Vision, Incorporated** — veteran-led, Memphis-based nonprofit integrating **Housing, Transportation, and Financial Empowerment**.
+
+Every change must reflect: veteran-centered tone, Memphis identity, professional nonprofit UX, accessibility (WCAG 2.1 AA), scalability, and deploy stability.
+
+## Stack & structure
+- **Next.js 14 App Router** (`app/`), React Server Components where appropriate
+- **Components**: `app/components/` (or `components/` if added)
+- **Styles**: `styles/globals.css` (project uses global CSS, not Tailwind unless migrated)
+- **Assets**: `public/` (logo: `public/infinite-vision-logo.png`)
+- Keep navigation simple, keyboard-accessible, mobile-responsive, SEO-friendly
+
+## Code quality
+- Modular, reusable components; consistent imports and paths
+- Fix broken imports, routing, hydration, and build errors when possible
+- No deprecated Next.js patterns, unnecessary dependencies, or breaking changes without asking
+- Ask before deleting files or major refactors
+- No lorem ipsum; no placeholders except testimonials
+
+## Local dev & deploy readiness
+- Site runs with `npm run dev`; production build with `npm run build`
+- Keep Vercel-compatible (no auth/DNS changes by agent)
+- Prepare clear commit messages when user requests commits; never commit unless asked
