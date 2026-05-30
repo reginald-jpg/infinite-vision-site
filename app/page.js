@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
+import { DONATION_URL, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_TEL, CONTACT_ADDRESS } from "./constants";
 
 export default function Home() {
   useEffect(() => {
@@ -36,7 +37,12 @@ export default function Home() {
               <Link href="/programs" className="btn secondary">
                 Explore Programs
               </Link>
-              <a href="#donate" onClick={(e) => scrollTo(e, "donate")} className="btn outline">
+              <a
+                href={DONATION_URL}
+                className="btn outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Donate
               </a>
             </div>
@@ -253,7 +259,14 @@ export default function Home() {
           <div className="container">
             <h2>Invest in Veteran Stability</h2>
             <p className="lead">Your support powers housing, transportation, and financial empowerment.</p>
-            <a href="#" className="btn primary">Donate Online (Coming Soon)</a>
+            <a
+              href={DONATION_URL}
+              className="btn primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate Online
+            </a>
           </div>
         </section>
 
@@ -272,8 +285,22 @@ export default function Home() {
               </form>
               <div>
                 <h3>Memphis-Based. Veteran-Led.</h3>
-                <p>Infinite Vision, Incorporated<br />Memphis, Tennessee</p>
-                <p>Email: info@infinitevision.org<br />Phone: (901) 000-0000</p>
+                <address>
+                  Infinite Vision, Incorporated
+                  <br />
+                  {CONTACT_ADDRESS.line1}
+                  <br />
+                  {CONTACT_ADDRESS.city}, {CONTACT_ADDRESS.state} {CONTACT_ADDRESS.zip}
+                  <br />
+                  {CONTACT_ADDRESS.country}
+                </address>
+                <p>
+                  Email:{" "}
+                  <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                  <br />
+                  Phone:{" "}
+                  <a href={`tel:${CONTACT_PHONE_TEL}`}>{CONTACT_PHONE}</a>
+                </p>
               </div>
             </div>
           </div>

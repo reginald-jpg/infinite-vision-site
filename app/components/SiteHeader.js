@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback } from "react";
+import { DONATION_URL } from "../constants";
 
 export default function SiteHeader({ variant = "home" }) {
   const onSkipToMain = useCallback((e) => {
@@ -47,7 +48,12 @@ export default function SiteHeader({ variant = "home" }) {
               <Link href="/partners">Partners</Link>
               <a href="#testimonials">Veteran Voices</a>
               <a href="#contact">Contact</a>
-              <a href="#donate" className="nav-cta">
+              <a
+                href={DONATION_URL}
+                className="nav-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Donate
               </a>
             </>
@@ -57,9 +63,14 @@ export default function SiteHeader({ variant = "home" }) {
               <Link href="/partners">Partners</Link>
               <Link href="/operations">Operations</Link>
               <Link href="/#contact">Contact</Link>
-              <Link href="/#donate" className="nav-cta">
+              <a
+                href={DONATION_URL}
+                className="nav-cta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Donate
-              </Link>
+              </a>
             </>
           )}
         </nav>
