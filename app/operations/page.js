@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../components/InnerPageShell";
 
 export const metadata = {
   title: "Operations & Outcomes | Infinite Vision",
@@ -10,24 +9,16 @@ export const metadata = {
 
 export default function OperationsPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Operations &amp; Outcomes</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / Operations
-              </p>
-            </div>
-
-            <p className="lead">
-              Infinite Vision operates as an integrated delivery system: housing stability, transportation access, and
-              financial empowerment reinforce each other so veterans are not navigating disconnected programs.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Operations"
+      title="Operations & Outcomes"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / Operations
+        </>
+      }
+      lead="Infinite Vision operates as an integrated delivery system: housing stability, transportation access, and financial empowerment reinforce each other so veterans are not navigating disconnected programs."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>How the integrated workflow runs</h2>
@@ -169,12 +160,7 @@ export default function OperationsPage() {
                 </ul>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 

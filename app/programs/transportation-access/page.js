@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../../components/SiteHeader";
-import SiteFooter from "../../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../../components/InnerPageShell";
 
 export const metadata = {
   title: "Transportation Access | Infinite Vision",
@@ -10,24 +9,16 @@ export const metadata = {
 
 export default function TransportationAccessPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Transportation Access</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / <Link href="/programs">Programs</Link> / Transportation Access
-              </p>
-            </div>
-
-            <p className="lead">
-              A tiered mobility system that supports reliable access to VA care, employment, job training, and
-              housing-related appointments.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Programs"
+      title="Transportation Access"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / <CrumbLink href="/programs">Programs</CrumbLink> / Transportation Access
+        </>
+      }
+      lead="A tiered mobility system that supports reliable access to VA care, employment, job training, and housing-related appointments."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>Transportation priorities</h2>
@@ -139,12 +130,7 @@ export default function TransportationAccessPage() {
                 Full role-based partner ecosystem: <Link href="/partners">Partners</Link>.
               </p>
             </details>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 

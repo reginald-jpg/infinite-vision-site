@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../../components/SiteHeader";
-import SiteFooter from "../../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../../components/InnerPageShell";
 
 export const metadata = {
   title: "Financial Empowerment | Infinite Vision",
@@ -10,24 +9,16 @@ export const metadata = {
 
 export default function FinancialEmpowermentPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Financial Empowerment</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / <Link href="/programs">Programs</Link> / Financial Empowerment
-              </p>
-            </div>
-
-            <p className="lead">
-              Practical coaching and milestones that help veterans build stability—aligned with housing and mobility
-              planning.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Programs"
+      title="Financial Empowerment"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / <CrumbLink href="/programs">Programs</CrumbLink> / Financial Empowerment
+        </>
+      }
+      lead="Practical coaching and milestones that help veterans build stability—aligned with housing and mobility planning."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>Core supports</h2>
@@ -124,12 +115,7 @@ export default function FinancialEmpowermentPage() {
                 Full role-based partner ecosystem: <Link href="/partners">Partners</Link>.
               </p>
             </details>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 

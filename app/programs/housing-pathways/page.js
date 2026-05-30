@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../../components/SiteHeader";
-import SiteFooter from "../../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../../components/InnerPageShell";
 
 export const metadata = {
   title: "Housing Pathways | Infinite Vision",
@@ -10,24 +9,16 @@ export const metadata = {
 
 export default function HousingPathwaysPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Housing Pathways</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / <Link href="/programs">Programs</Link> / Housing Pathways
-              </p>
-            </div>
-
-            <p className="lead">
-              A structured pathway from first contact to stable housing—built for dignity, safety, and long-term
-              retention.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Programs"
+      title="Housing Pathways"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / <CrumbLink href="/programs">Programs</CrumbLink> / Housing Pathways
+        </>
+      }
+      lead="A structured pathway from first contact to stable housing—built for dignity, safety, and long-term retention."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>How it works</h2>
@@ -135,12 +126,7 @@ export default function HousingPathwaysPage() {
                 Full role-based partner ecosystem: <Link href="/partners">Partners</Link>.
               </p>
             </details>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 

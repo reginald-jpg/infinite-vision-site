@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../components/InnerPageShell";
 
 export const metadata = {
   title: "Partners | Infinite Vision",
@@ -10,25 +9,16 @@ export const metadata = {
 
 export default function PartnersPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Partner Ecosystem</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / Partners
-              </p>
-            </div>
-
-            <p className="lead">
-              Infinite Vision coordinates across Memphis to reduce missed appointments, stabilize housing, and support
-              long-term mobility and financial progress. Partners are shown as role-based ecosystems (not logos) to keep
-              pathways clear and trustworthy.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Partners"
+      title="Partner Ecosystem"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / Partners
+        </>
+      }
+      lead="Infinite Vision coordinates across Memphis to reduce missed appointments, stabilize housing, and support long-term mobility and financial progress. Partners are shown as role-based ecosystems (not logos) to keep pathways clear and trustworthy."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>Veteran &amp; Government Partners</h2>
@@ -267,12 +257,7 @@ export default function PartnersPage() {
                 Start with <Link href="/programs">Programs</Link> to see how these ecosystems support step-by-step pathways.
               </p>
             </div>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 

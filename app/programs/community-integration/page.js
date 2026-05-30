@@ -1,6 +1,5 @@
 import Link from "next/link";
-import SiteHeader from "../../components/SiteHeader";
-import SiteFooter from "../../components/SiteFooter";
+import InnerPageShell, { CrumbLink } from "../../components/InnerPageShell";
 
 export const metadata = {
   title: "Community Integration | Infinite Vision",
@@ -10,24 +9,16 @@ export const metadata = {
 
 export default function CommunityIntegrationPage() {
   return (
-    <>
-      <SiteHeader variant="inner" />
-
-      <main id="main">
-        <section className="section section-alt">
-          <div className="container">
-            <div className="section-header-row">
-              <h1>Community Integration</h1>
-              <p className="breadcrumbs">
-                <Link href="/">Home</Link> / <Link href="/programs">Programs</Link> / Community Integration
-              </p>
-            </div>
-
-            <p className="lead">
-              Helping veterans connect to workforce systems and trusted community supports—so progress is sustained, not
-              temporary.
-            </p>
-
+    <InnerPageShell
+      eyebrow="Programs"
+      title="Community Integration"
+      breadcrumbs={
+        <>
+          <CrumbLink href="/">Home</CrumbLink> / <CrumbLink href="/programs">Programs</CrumbLink> / Community Integration
+        </>
+      }
+      lead="Helping veterans connect to workforce systems and trusted community supports—so progress is sustained, not temporary."
+    >
             <div className="grid two">
               <div className="card">
                 <h2>Who we coordinate with</h2>
@@ -143,12 +134,7 @@ export default function CommunityIntegrationPage() {
                 </li>
               </ul>
             </details>
-          </div>
-        </section>
-      </main>
-
-      <SiteFooter />
-    </>
+    </InnerPageShell>
   );
 }
 
