@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "generate-logos": "node scripts/generate-logo-pngs.mjs"
+    "generate-logos": "node scripts/generate-logo-pngs.mjs",
+    "process-logo": "node scripts/process-original-logo.mjs"
   },
   "dependencies": {
     "next": "14.1.0",

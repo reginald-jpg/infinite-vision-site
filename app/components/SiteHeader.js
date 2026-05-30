@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCallback } from "react";
 import { DONATION_URL } from "../constants";
-import Logo from "./Logo";
 
 export default function SiteHeader({ variant = "home" }) {
   const onSkipToMain = useCallback((e) => {
@@ -30,8 +30,18 @@ export default function SiteHeader({ variant = "home" }) {
       </a>
 
       <div className="container mx-auto flex w-[90%] max-w-6xl flex-wrap items-center justify-between gap-4 py-3">
-        <Link href="/" aria-label="Infinite Vision home">
-          <Logo variant="horizontal" />
+        <Link href="/" className="inline-flex items-center gap-2.5" aria-label="Infinite Vision home">
+          <Image
+            src="/infinite-vision-logo.png"
+            alt=""
+            width={68}
+            height={68}
+            priority
+            className="h-[52px] w-auto md:h-[60px] lg:h-[68px]"
+          />
+          <span className="text-sm font-bold uppercase tracking-[0.14em] text-gold md:text-base lg:text-lg">
+            Infinite Vision
+          </span>
         </Link>
 
         <nav className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2" aria-label="Primary">
