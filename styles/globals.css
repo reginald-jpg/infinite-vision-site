@@ -1,173 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand tokens — shared with legacy inner-page styles */
 :root {
-  --army-green: #2f3e1f;
-  --army-gold: #c9a227;
-  --black: #000000;
-  --off-white: #f5f5f5;
-  --text-main: #222222;
+  --navy: #0a1a2f;
+  --gold: #c8a45d;
+  --soft-gray: #f4f4f4;
+  --charcoal: #1a1a1a;
+  --white: #ffffff;
+
+  /* Legacy aliases for program/partner pages */
+  --army-green: var(--navy);
+  --army-gold: var(--gold);
+  --black: var(--navy);
+  --off-white: var(--soft-gray);
+  --text-main: var(--charcoal);
   --text-muted: #666666;
-  --card-bg: #ffffff;
+  --card-bg: var(--white);
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: var(--off-white);
-  color: var(--text-main);
+@layer base {
+  body {
+    @apply bg-soft-gray font-sans text-charcoal antialiased;
+  }
+
+  a {
+    @apply no-underline;
+  }
 }
 
-a {
-  color: var(--army-gold);
-  text-decoration: none;
-}
-
-:focus-visible {
-  outline: 3px solid var(--army-gold);
-  outline-offset: 3px;
-}
-
-.skip-link {
-  position: absolute;
-  left: -9999px;
-  top: 0.5rem;
-  background: white;
-  color: var(--black);
-  padding: 0.6rem 0.9rem;
-  border-radius: 0.5rem;
-  z-index: 1000;
-}
-
-.skip-link:focus {
-  left: 0.75rem;
-}
-
+/* Legacy styles for inner pages (programs, partners, operations) */
 .container {
   width: 90%;
   max-width: 1120px;
   margin: auto;
 }
 
-/* HEADER */
-.site-header {
-  background: var(--black);
-  color: white;
-  padding: 0.75rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
-  color: var(--army-gold);
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.logo a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  color: var(--army-gold);
-}
-
-.logo-mark {
-  --logo-size: 52px;
-  display: inline-flex;
-  width: var(--logo-size);
-  height: var(--logo-size);
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.logo-text {
-  letter-spacing: 0.02em;
-}
-
-@media (min-width: 720px) {
-  .logo-mark {
-    --logo-size: 60px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .logo-mark {
-    --logo-size: 68px;
-  }
-}
-
-.main-nav {
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-cta {
-  background: var(--army-gold);
-  color: var(--black);
-  padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  font-weight: bold;
-}
-
-/* HERO */
-.hero {
-  background: radial-gradient(circle at top left, var(--army-gold), var(--army-green), var(--black));
-  color: white;
-  padding: 5rem 0;
-}
-
-.hero h1 {
-  font-size: 2.4rem;
-  max-width: 700px;
-}
-
-.hero-actions {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-}
-
-@media (max-width: 720px) {
-  .main-nav {
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.75rem;
-  }
-
-  .hero-actions {
-    flex-wrap: wrap;
-  }
-}
-
-.btn {
-  padding: 0.75rem 1.4rem;
-  border-radius: 999px;
-  font-weight: bold;
-  border: 2px solid transparent;
-}
-
-.btn.primary {
-  background: var(--army-gold);
-  color: var(--black);
-}
-
-.btn.secondary {
-  background: white;
-  color: var(--army-green);
-}
-
-.btn.outline {
-  background: transparent;
-  border-color: white;
-  color: white;
-}
-
-/* SECTIONS */
 .section {
   padding: 3.5rem 0;
 }
@@ -198,7 +67,7 @@ a {
   background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 0.75rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(10, 26, 47, 0.08);
 }
 
 .card-link {
@@ -218,7 +87,7 @@ a {
 .card-link:hover .card,
 .card-link:focus-visible .card {
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.09);
+  box-shadow: 0 8px 28px rgba(10, 26, 47, 0.12);
 }
 
 .section-header-row {
@@ -235,7 +104,7 @@ a {
 }
 
 .breadcrumbs a {
-  color: var(--army-green);
+  color: var(--navy);
   text-decoration: underline;
 }
 
@@ -271,28 +140,25 @@ a {
 }
 
 .pill-list li {
-  background: var(--army-green);
+  background: var(--navy);
   color: white;
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
 }
 
-/* TIERS */
 .tier-card {
-  background: #1f2714;
+  background: var(--navy);
   color: white;
   padding: 1rem;
   border-radius: 0.6rem;
 }
 
-/* DONATE */
-.donate-section {
-  background: linear-gradient(135deg, var(--army-green), var(--black));
-  color: white;
-  text-align: center;
+.lead {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-muted);
 }
 
-/* CONTACT */
 .contact-form {
   display: grid;
   gap: 1rem;
@@ -303,12 +169,41 @@ a {
   padding: 0.6rem;
   border-radius: 0.4rem;
   border: 1px solid #ccc;
+  width: 100%;
 }
 
-/* FOOTER */
-.site-footer {
-  background: var(--black);
-  color: white;
-  text-align: center;
-  padding: 1.5rem 0;
+.contact-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.btn {
+  padding: 0.75rem 1.4rem;
+  border-radius: 999px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.btn.secondary {
+  background: white;
+  color: var(--navy);
+}
+
+.btn.outline {
+  background: transparent;
+  border-color: var(--navy);
+  color: var(--navy);
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: var(--gold);
 }

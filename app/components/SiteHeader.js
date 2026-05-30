@@ -16,41 +16,42 @@ export default function SiteHeader({ variant = "home" }) {
     el.scrollIntoView({ behavior: "smooth" });
   }, []);
 
+  const navLinkClass =
+    "text-sm text-white/90 transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
+
   return (
-    <header className="site-header">
-      <a className="skip-link" href="#main" onClick={onSkipToMain}>
+    <header className="sticky top-0 z-50 bg-navy shadow-md">
+      <a
+        className="absolute left-[-9999px] top-2 z-[1000] rounded-lg bg-white px-3 py-2 text-charcoal focus:left-3 focus:outline focus:outline-2 focus:outline-gold"
+        href="#main"
+        onClick={onSkipToMain}
+      >
         Skip to main content
       </a>
 
-      <div className="container nav-container">
-        <div className="logo">
-          <Link href="/" aria-label="Infinite Vision home">
-            <span className="logo-mark" aria-hidden="true">
-              <Image
-                src="/infinite-vision-logo.png"
-                alt=""
-                width={68}
-                height={68}
-                priority
-              />
+      <div className="container mx-auto flex w-[90%] max-w-6xl flex-wrap items-center justify-between gap-4 py-3">
+        <div className="font-bold uppercase tracking-wide text-gold">
+          <Link href="/" className="inline-flex items-center gap-2 text-gold" aria-label="Infinite Vision home">
+            <span className="inline-flex h-[52px] w-[52px] overflow-hidden rounded-lg bg-white/10 md:h-[60px] md:w-[60px] lg:h-[68px] lg:w-[68px]">
+              <Image src="/infinite-vision-logo.png" alt="" width={68} height={68} priority />
             </span>
-            <span className="logo-text">Infinite Vision</span>
+            <span className="tracking-wide">Infinite Vision</span>
           </Link>
         </div>
 
-        <nav className="main-nav" aria-label="Primary">
+        <nav className="flex flex-wrap items-center justify-end gap-x-4 gap-y-2" aria-label="Primary">
           {variant === "home" ? (
             <>
-              <a href="#about">About</a>
-              <a href="#model">Our Model</a>
-              <a href="#transportation">Transportation</a>
-              <a href="#memphis">Memphis Impact</a>
-              <Link href="/partners">Partners</Link>
-              <a href="#testimonials">Veteran Voices</a>
-              <a href="#contact">Contact</a>
+              <a href="#about" className={navLinkClass}>About</a>
+              <a href="#model" className={navLinkClass}>Our Model</a>
+              <a href="#transportation" className={navLinkClass}>Transportation</a>
+              <a href="#memphis" className={navLinkClass}>Memphis Impact</a>
+              <Link href="/partners" className={navLinkClass}>Partners</Link>
+              <a href="#testimonials" className={navLinkClass}>Veteran Voices</a>
+              <a href="#contact" className={navLinkClass}>Contact</a>
               <a
                 href={DONATION_URL}
-                className="nav-cta"
+                className="rounded-full bg-gold px-4 py-2 text-sm font-bold text-navy transition-colors hover:bg-gold-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -59,13 +60,13 @@ export default function SiteHeader({ variant = "home" }) {
             </>
           ) : (
             <>
-              <Link href="/programs">Programs</Link>
-              <Link href="/partners">Partners</Link>
-              <Link href="/operations">Operations</Link>
-              <Link href="/#contact">Contact</Link>
+              <Link href="/programs" className={navLinkClass}>Programs</Link>
+              <Link href="/partners" className={navLinkClass}>Partners</Link>
+              <Link href="/operations" className={navLinkClass}>Operations</Link>
+              <Link href="/#contact" className={navLinkClass}>Contact</Link>
               <a
                 href={DONATION_URL}
-                className="nav-cta"
+                className="rounded-full bg-gold px-4 py-2 text-sm font-bold text-navy transition-colors hover:bg-gold-muted focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -78,4 +79,3 @@ export default function SiteHeader({ variant = "home" }) {
     </header>
   );
 }
-

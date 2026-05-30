@@ -11,3 +11,8 @@ export const CONTACT_ADDRESS = {
   zip: "38103",
   country: "USA",
 };
+
+/** Replace with official EIN when published */
+export const ORG_EIN = "XX-XXXXXXX";
+
+export const LINKEDIN_URL = "https://www.linkedin.com/company/infinite-vision-incorporated";
